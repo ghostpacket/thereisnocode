@@ -1,0 +1,70 @@
+/* styles.css */
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #000;
+    color: #0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px #0f0;
+    width: 100%;
+    max-width: 360px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    background: transparent;
+    border: 1px solid #0f0;
+    color: #0f0;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #fff;
+    outline: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    flex-grow: 1;
+    padding: 10px;
+    background-color: #0f0;
+    border: none;
+    border-radius: 4px;
+    color: black;
+    cursor: pointer;
+    margin: 12px 5px 0 5px;
+}
+
+button:hover {
+    background-color: #0d0;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.matrix-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: -1;
+}
