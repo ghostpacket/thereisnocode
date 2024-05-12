@@ -10,9 +10,9 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     }
 
     console.log('Logging in', username, password);
-    // Typically you'd send a request to your server here
+    // You would normally handle server communication here
 });
 
 document.getElementById('createAccount').addEventListener('click', function() {
-    window.location.href = 'register.html'; // Ensures redirection to the registration page
+    window.location.href = 'register.html'; // Ensures redirection to registration page
 });
