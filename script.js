@@ -4,15 +4,15 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
 
-    if(username.trim() === '' || password.trim() === '') {
-        document.getElementById('error-message').textContent = 'Username and password are required!';
-        return;
+    // Retrieve user data from local storage
+    var storedUser = localStorage.getItem('user');
+    var userData = storedUser ? JSON.parse(storedUser) : {};
+
+    if(username === userData.username && password === userData.password) {
+        console.log('Login successful', username);
+        // Redirect to a different page or change the UI upon successful login
+        window.location.href = 'welcome.html'; // Redirect to a welcome page or dashboard
+    } else {
+        document.getElementById('error-message').textContent = 'Invalid username or password!';
     }
-
-    console.log('Logging in', username, password);
-    // Typically you'd send a request to your server here
-});
-
-document.getElementById('createAccount').addEventListener('click', function() {
-    window.location.href = 'register.html'; // Ensures redirection to the registration page
 });

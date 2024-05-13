@@ -1,18 +1,24 @@
-// script.js
-document.getElementById('loginForm').addEventListener('submit', function(event) {
+// registerScript.js
+document.getElementById('registerForm').addEventListener('submit', function(event) {
     event.preventDefault();
     var username = document.getElementById('username').value;
+    var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
+    var confirmPassword = document.getElementById('confirm-password').value;
 
-    if(username.trim() === '' || password.trim() === '') {
-        document.getElementById('error-message').textContent = 'Username and password are required!';
+    if (username.trim() === '' || password.trim() === '' || email.trim() === '') {
+        document.getElementById('error-message').textContent = 'Please fill out all fields!';
         return;
     }
 
-    console.log('Logging in', username, password);
-    // You would normally handle server communication here
-});
+    if (password !== confirmPassword) {
+        document.getElementById('error-message').textContent = 'Passwords do not match!';
+        return;
+    }
 
-document.getElementById('createAccount').addEventListener('click', function() {
-    window.location.href = 'register.html'; // Ensures redirection to registration page
+    // Store user data in local storage
+    localStorage.setItem('user', JSON.stringify({ username, email, password }));
+
+    // Redirect to login page after registration
+    window.location.href = 'index.html';
 });

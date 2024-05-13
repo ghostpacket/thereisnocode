@@ -8,6 +8,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    padding: 10px;
 }
 
 .login-container {
@@ -59,7 +60,7 @@ button:hover {
     margin-bottom: 15px;
 }
 
-.matrix-effect {
+.matrix-effect canvas {
     position: fixed;
     top: 0;
     left: 0;
@@ -68,4 +69,27 @@ button:hover {
     background: black;
     overflow: hidden;
     z-index: -1;
+    text-shadow: 0 0 5px #0F0;
+    font-family: 'VT323', monospace;
+}
+
+@keyframes flashFadeOut {
+    0%, 100% { opacity: 1; background-color: transparent; }
+    50% { opacity: 0.5; background-color: #0f0; }
+}
+
+.container-flash {
+    animation: flashFadeOut 1s ease-out forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .login-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    input[type="text"], input[type="password"], input[type="email"], button {
+        font-size: 16px;
+    }
 }
